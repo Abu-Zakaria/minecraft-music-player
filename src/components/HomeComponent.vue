@@ -40,6 +40,13 @@ export default {
   width: 20%;
 }
 
+@media screen and (max-width: 990px) {
+  #home {
+    left: 25%;
+    width: 50%;
+  }
+}
+
 .blur {
   height: 100%;
   width: 100%;
