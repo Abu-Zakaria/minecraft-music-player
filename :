@@ -1,0 +1,29 @@
+<template>
+  <div id="home">
+    <div class="blur"></div>
+    <div class="player">
+      <button>Play</button>
+      <button>Pause</button>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+#home {
+  z-index: 9;
+  position: fixed;
+  top: 150px;
+  left: 40%;
+  width: 20%;
+}
+
+.blur {
+  background: #fff;
+  opacity: 0.2;
+  backdrop-filter: blur(10px);
+}
+
+.player {
+}
+</style>
+
