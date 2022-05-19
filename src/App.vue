@@ -1,17 +1,17 @@
 <template>
   <div class="wrapper">
     <div class="overlay"></div>
-    <HomeComponent />
+    <PlayerComponent />
   </div>
 </template>
 
 <script>
-import HomeComponent from "./components/HomeComponent.vue";
+import PlayerComponent from "./components/PlayerComponent.vue";
 
 export default {
   name: "App",
   components: {
-    HomeComponent,
+    PlayerComponent,
   },
 };
 </script>

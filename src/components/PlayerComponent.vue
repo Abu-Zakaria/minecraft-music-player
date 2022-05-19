@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="home">
+    <div id="player">
       <div class="player">
         <button type="button" class="play-btn" :class="{ 'playing': state.isPlaying }" @click="togglePlay">
           <img src="../assets/jukebox.webp" class="jukebox-img" alt="Play">
@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style scoped>
-#home {
+#player {
   z-index: 9;
   position: fixed;
   top: 35%;
@@ -41,7 +41,7 @@ export default {
 }
 
 @media screen and (max-width: 990px) {
-  #home {
+  #player {
     left: 25%;
     width: 50%;
   }
