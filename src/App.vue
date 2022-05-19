@@ -31,6 +31,7 @@ body {
 .wrapper {
   background: url('assets/background.webp');
   background-size: cover;
+  background-position: center;
   height: 100vh;
 }
 
