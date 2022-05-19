@@ -2,8 +2,8 @@
   <div>
     <div id="player">
       <div class="player">
-        <button type="button" class="play-btn" :class="{ 'playing': state.isPlaying }" @click="togglePlay">
-          <img src="../assets/jukebox.webp" class="jukebox-img" alt="Play">
+        <button type="button" class="play-btn" :class="{ 'playing': state.isPlaying, }" @click="togglePlay">
+          <img src="../assets/jukebox.webp" class="jukebox-img" :class="{ 'beating': state.isPlaying }" alt="Play">
         </button>
       </div>
     </div>
@@ -102,23 +102,50 @@ export default {
   animation-timing-function: linear;
 }
 
+.jukebox-img.beating {
+  animation-name: beating;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
 @keyframes playingAnim {
   from {
-    box-shadow: 0 0 1px 2px rgba(115, 115, 115, 0.7);
-    transform: rotateZ(0deg);
+    box-shadow: 0 0 1px 0px rgba(115, 115, 115, 0.3);
   }
 
-  25% {
-    transform: rotateZ(8deg);
-  }
-
-  75% {
-    transform: rotateZ(-8deg);
+  35% {
+    box-shadow: 0 0 1px 16px rgba(115, 115, 115, 0.3);
   }
 
   to {
     box-shadow: 0 0 2px 25px rgba(115, 115, 115, 0);
-    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes beating {
+  0% {
+    transform: scale(1);
+  }
+
+  12% {
+    transform: scale(0.8);
+  }
+
+  25% {
+    transform: scale(0.9);
+  }
+
+  33% {
+    transform: scale(1.1);
+  }
+
+  37% {
+    transform: scale(0.97);
+  }
+
+  50% {
+    transform: scale(1);
   }
 }
 

@@ -5,7 +5,7 @@ const musics = {
   "/musics/door.mp3"            : "Door",
   "/musics/key.mp3"             : "Key",
   "/musics/living_mice.mp3"     : "Living Mice",
-  "/musics/lullaaby.mp3"        : "Lullaby",
+  "/musics/lullaby.mp3"        : "Lullaby",
 };
 
 const music_files = [
@@ -13,7 +13,7 @@ const music_files = [
   "/musics/door.mp3",
   "/musics/key.mp3",
   "/musics/living_mice.mp3",
-  "/musics/lullaaby.mp3",
+  "/musics/lullaby.mp3",
 ];
 
 export default () => {
