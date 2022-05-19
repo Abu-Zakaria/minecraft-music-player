@@ -27,7 +27,9 @@ export default {
     });
 
     const { getRandomMusic } = Musics();
-    const { state: playerState, play, stop } = Player();
+    const { state: playerState, play, stop } = Player(() => {
+        playRandomMusic();
+    });
 
     const togglePlay = () => {
       state.isPlaying = !state.isPlaying;
@@ -35,17 +37,22 @@ export default {
       if(state.isPlaying) {
         if(!playerState.currentlyPlaying)
         {
-          const music = getRandomMusic();
-
-          play(music.path, music.name);
-
-          state.currentlyPlaying = playerState.currentlyPlaying;
+          playRandomMusic();
         } else {
           play();
         }
       } else {
         stop();       
       }
+    }
+
+    const playRandomMusic = () => {
+      console.log("playing random")
+      const music = getRandomMusic(state.currentlyPlaying);
+
+      play(music.path, music.name, (current_playing) => {
+        state.currentlyPlaying = current_playing;
+      });
     }
 
     return {

@@ -1,11 +1,11 @@
 import { reactive } from 'vue';
 
 const musics = {
-  "/musics/death.mp3"           : "Death",
-  "/musics/door.mp3"            : "Door",
-  "/musics/key.mp3"             : "Key",
-  "/musics/living_mice.mp3"     : "Living Mice",
-  "/musics/lullaby.mp3"        : "Lullaby",
+  "/musics/death.mp3"                   : "Death",
+  "/musics/door.mp3"                    : "Door",
+  "/musics/key.mp3"                     : "Key",
+  "/musics/living_mice.mp3"             : "Living Mice",
+  "/musics/subwoofer_lullaby.mp3"       : "Subwoofer Lullaby",
 };
 
 const music_files = [
@@ -13,7 +13,7 @@ const music_files = [
   "/musics/door.mp3",
   "/musics/key.mp3",
   "/musics/living_mice.mp3",
-  "/musics/lullaby.mp3",
+  "/musics/subwoofer_lullaby.mp3",
 ];
 
 export default () => {
@@ -29,7 +29,7 @@ export default () => {
   const getRandomMusic = (prev = null) => {
     const rand_num = getRandomNumberBetween(0, state.music_files.length - 1);
 
-    if(rand_num === prev)
+    if(musics[state.music_files[rand_num]] === prev)
     {
       getRandomMusic(prev);
       return;
