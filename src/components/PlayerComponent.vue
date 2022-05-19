@@ -5,6 +5,10 @@
         <button type="button" class="play-btn" :class="{ 'playing': state.isPlaying, }" @click="togglePlay">
           <img src="../assets/jukebox.webp" class="jukebox-img" :class="{ 'beating': state.isPlaying }" alt="Play">
         </button>
+
+        <div v-if="state.currentlyPlaying" class="music-status-wrapper mc-text text-white">
+          <p>{{ state.currentlyPlaying }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -19,6 +23,7 @@ export default {
   setup() {
     const state = reactive({
       isPlaying: false,
+      currentlyPlaying: null,
     });
 
     const { getRandomMusic } = Musics();
@@ -31,9 +36,10 @@ export default {
         if(!playerState.currentlyPlaying)
         {
           const music = getRandomMusic();
-          console.log("Playing now: ", music.name);
 
           play(music.path, music.name);
+
+          state.currentlyPlaying = playerState.currentlyPlaying;
         } else {
           play();
         }
@@ -147,6 +153,10 @@ export default {
   50% {
     transform: scale(1);
   }
+}
+
+.music-status-wrapper {
+  margin-top: 40px;
 }
 
 </style>

@@ -40,4 +40,14 @@ body {
   background: #000;
   opacity: 0.4;
 }
+
+.mc-text {
+  font-family: "Minecraft";
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.text-white {
+  color: #fff;
+}
 </style>
