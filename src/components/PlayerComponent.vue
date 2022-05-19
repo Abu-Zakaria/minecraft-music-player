@@ -13,6 +13,7 @@
 <script>
 import { reactive } from 'vue';
 import Musics from '../composables/musics.js';
+import Player from '../composables/player.js';
 
 export default {
   setup() {
@@ -21,12 +22,23 @@ export default {
     });
 
     const { getRandomMusic } = Musics();
+    const { state: playerState, play, stop } = Player();
 
     const togglePlay = () => {
       state.isPlaying = !state.isPlaying;
 
       if(state.isPlaying) {
-        console.log(getRandomMusic());
+        if(!playerState.currentlyPlaying)
+        {
+          const music = getRandomMusic();
+          console.log("Playing now: ", music.name);
+
+          play(music.path, music.name);
+        } else {
+          play();
+        }
+      } else {
+        stop();       
       }
     }
 

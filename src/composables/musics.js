@@ -38,7 +38,7 @@ export default () => {
     const path = state.music_files[rand_num];
 
     return {
-      music_name: musics[path],
+      name: musics[path],
       path,
     }
   }
