@@ -75,8 +75,8 @@ export default {
 
 @media screen and (max-width: 990px) {
   #player {
-    left: 25%;
-    width: 50%;
+    left: 15%;
+    width: 70%;
   }
 }
 
