@@ -35,23 +35,24 @@ export default {
       state.isPlaying = !state.isPlaying;
 
       if(state.isPlaying) {
-        if(!playerState.currentlyPlaying)
-        {
+        if(!playerState.currentlyPlaying) {
           playRandomMusic();
         } else {
           play();
         }
       } else {
-        stop();       
+        stop();
       }
     }
 
     const playRandomMusic = () => {
       console.log("playing random")
       const music = getRandomMusic(state.currentlyPlaying);
+      console.log("selected: ", music);
 
       play(music.path, music.name, (current_playing) => {
         state.currentlyPlaying = current_playing;
+        console.log("Playing: ", state.currentlyPlaying);
       });
     }
 

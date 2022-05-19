@@ -1,19 +1,33 @@
 import { reactive } from 'vue';
 
 const musics = {
-  "/musics/death.mp3"                   : "Death",
-  "/musics/door.mp3"                    : "Door",
-  "/musics/key.mp3"                     : "Key",
-  "/musics/living_mice.mp3"             : "Living Mice",
-  "/musics/subwoofer_lullaby.mp3"       : "Subwoofer Lullaby",
+  "death.mp3"                   : "Death",
+  "door.mp3"                    : "Door",
+  "key.mp3"                     : "Key",
+  "living_mice.mp3"             : "Living Mice",
+  "subwoofer_lullaby.mp3"       : "Subwoofer Lullaby",
+  "dry_hands.mp3"               : "Dry Hands",
+  "equinoxe.mp3"                : "Équinoxe",
+  "haggstrom.mp3"               : "Haggstrom",
+  "mice_on_venus.mp3"           : "Mice on Venus",
+  "minecraft.mp3"               : "Minecraft",
+  "oxygene.mp3"                 : "Oxygène",
+  "wet_hands.mp3"               : "Wet Hands"
 };
 
 const music_files = [
-  "/musics/death.mp3",
-  "/musics/door.mp3",
-  "/musics/key.mp3",
-  "/musics/living_mice.mp3",
-  "/musics/subwoofer_lullaby.mp3",
+  "death.mp3",
+  "door.mp3",
+  "key.mp3",
+  "living_mice.mp3",
+  "subwoofer_lullaby.mp3",
+  "dry_hands.mp3",
+  "equinoxe.mp3",
+  "haggstrom.mp3",
+  "mice_on_venus.mp3",
+  "minecraft.mp3",
+  "oxygene.mp3",
+  "wet_hands.mp3"
 ];
 
 export default () => {
@@ -34,11 +48,11 @@ export default () => {
       return getRandomMusic(prev);
     }
 
-    const path = state.music_files[rand_num];
+    const music_file = state.music_files[rand_num];
 
     return {
-      name: musics[path],
-      path,
+      name: musics[music_file],
+      path: "/musics/" + music_file,
     }
   }
   
