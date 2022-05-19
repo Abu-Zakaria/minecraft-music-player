@@ -12,6 +12,7 @@
 
 <script>
 import { reactive } from 'vue';
+import Musics from '../composables/musics.js';
 
 export default {
   setup() {
@@ -19,8 +20,14 @@ export default {
       isPlaying: false,
     });
 
+    const { getRandomMusic } = Musics();
+
     const togglePlay = () => {
       state.isPlaying = !state.isPlaying;
+
+      if(state.isPlaying) {
+        console.log(getRandomMusic());
+      }
     }
 
     return {
