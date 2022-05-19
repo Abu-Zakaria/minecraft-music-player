@@ -31,8 +31,7 @@ export default () => {
 
     if(musics[state.music_files[rand_num]] === prev)
     {
-      getRandomMusic(prev);
-      return;
+      return getRandomMusic(prev);
     }
 
     const path = state.music_files[rand_num];
