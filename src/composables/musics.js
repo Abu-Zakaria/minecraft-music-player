@@ -7,11 +7,11 @@ const musics = {
   "living_mice.mp3"             : "Living Mice",
   "subwoofer_lullaby.mp3"       : "Subwoofer Lullaby",
   "dry_hands.mp3"               : "Dry Hands",
-  "equinoxe.mp3"                : "Équinoxe",
+  "equinoxe.mp3"                : "Equinoxe",
   "haggstrom.mp3"               : "Haggstrom",
   "mice_on_venus.mp3"           : "Mice on Venus",
   "minecraft.mp3"               : "Minecraft",
-  "oxygene.mp3"                 : "Oxygène",
+  "oxygene.mp3"                 : "Oxygene",
   "wet_hands.mp3"               : "Wet Hands"
 };
 
