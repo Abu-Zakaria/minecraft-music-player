@@ -6,8 +6,15 @@
           <img src="../assets/jukebox.webp" class="jukebox-img" :class="{ 'beating': state.isPlaying }" alt="Play">
         </button>
 
-        <div v-if="state.currentlyPlaying" class="music-status-wrapper mc-text text-white">
+        <div v-if="state.onQueue" class="mc-text text-white">
+          <p>Loading...</p>
+        </div>
+        <div v-else-if="state.currentlyPlaying" class="music-status-wrapper mc-text text-white">
           <p>{{ state.currentlyPlaying }}</p>
+        </div>
+
+        <div class="skip-wrapper" v-if="state.currentlyPlaying && !state.onQueue">
+          <button class="skip-btn mc-text" type="button" @click="skip">Skip</button>
         </div>
       </div>
     </div>
@@ -24,6 +31,7 @@ export default {
     const state = reactive({
       isPlaying: false,
       currentlyPlaying: null,
+      onQueue: false,
     });
 
     const { getRandomMusic } = Musics();
@@ -46,19 +54,25 @@ export default {
     }
 
     const playRandomMusic = () => {
-      console.log("playing random")
       const music = getRandomMusic(state.currentlyPlaying);
-      console.log("selected: ", music);
+
+      state.onQueue = true;
 
       play(music.path, music.name, (current_playing) => {
         state.currentlyPlaying = current_playing;
-        console.log("Playing: ", state.currentlyPlaying);
+        state.onQueue = false;
       });
+    }
+
+    const skip = () => {
+      stop();
+      playRandomMusic();
     }
 
     return {
       state,
       togglePlay,
+      skip,
     }
   },
 }
@@ -165,6 +179,19 @@ export default {
 
 .music-status-wrapper {
   margin-top: 40px;
+}
+
+.skip-wrapper {
+  margin-top: 40px;
+}
+
+.skip-btn {
+  background: transparent;
+  border: 1px solid white;
+  padding: 8px 18px 12px 18px;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
 }
 
 </style>
