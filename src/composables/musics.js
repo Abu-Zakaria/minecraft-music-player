@@ -20,6 +20,10 @@ const musics = {
   "dog.mp3"                     : "Dog",
   "excuse.mp3"                  : "Excuse",
   "sweden.mp3"                  : "Sweden",
+  "alpha.mp3"                   : "Alpha",
+  "moog_city.mp3"               : "Moog City",
+  "moog_city_2.mp3"             : "Moog City 2",
+  "mutation.mp3"                : "Mutation",
 };
 
 const music_files = [
@@ -42,6 +46,10 @@ const music_files = [
   "dog.mp3",
   "excuse.mp3",
   "sweden.mp3",
+  "alpha.mp3",
+  "moog_city.mp3",
+  "moog_city_2.mp3",
+  "mutation.mp3",
 ];
 
 export default () => {
