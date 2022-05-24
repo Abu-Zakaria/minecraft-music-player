@@ -12,7 +12,14 @@ const musics = {
   "mice_on_venus.mp3"           : "Mice on Venus",
   "minecraft.mp3"               : "Minecraft",
   "oxygene.mp3"                 : "Oxygene",
-  "wet_hands.mp3"               : "Wet Hands"
+  "wet_hands.mp3"               : "Wet Hands",
+  "cat.mp3"                     : "Cat",
+  "chris.mp3"                   : "Chris",
+  "clark.mp3"                   : "Clark",
+  "danny.mp3"                   : "Danny",
+  "dog.mp3"                     : "Dog",
+  "excuse.mp3"                  : "Excuse",
+  "sweden.mp3"                  : "Sweden",
 };
 
 const music_files = [
@@ -27,7 +34,14 @@ const music_files = [
   "mice_on_venus.mp3",
   "minecraft.mp3",
   "oxygene.mp3",
-  "wet_hands.mp3"
+  "wet_hands.mp3",
+  "cat.mp3",
+  "chris.mp3",
+  "clark.mp3",
+  "danny.mp3",
+  "dog.mp3",
+  "excuse.mp3",
+  "sweden.mp3",
 ];
 
 export default () => {
